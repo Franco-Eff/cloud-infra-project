@@ -5,6 +5,7 @@ resource "aws_s3_bucket" "main" {
     Name        = "${var.project_name}-bucket"
     Environment = "dev"
     ManagedBy   = "terraform"
+    Project = "cloud-infra-project"
   }
 }
 # ── GET LATEST AMAZON LINUX AMI ───────────────────────
