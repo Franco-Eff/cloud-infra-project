@@ -99,3 +99,11 @@ resource "aws_security_group" "ec2" {
     ManagedBy = "terraform"
   }
 }
+
+resource "aws_vpc" "debug" {
+  cidr_block = "10.123.0.0/16"
+
+  tags = {
+    Name = "debug-vpc"
+  }
+}
