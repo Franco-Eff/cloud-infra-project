@@ -25,5 +25,5 @@ def handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': f'Instance' {instance_id} is now {current_state}'
+        'body': f'Instance {instance_id} is now {current_state}'
     }
