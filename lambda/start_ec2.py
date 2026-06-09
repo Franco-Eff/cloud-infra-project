@@ -11,7 +11,7 @@ def handler(event, context):
     Starts the EC2 instance defined in the INSTANCE_ID environment variable.
     Triggered automatically by EventBridge on a schedule.
     """
-    ec2 = boto3.client('ec2', region_name=os.environ['AWS_REGION'])
+    ec2 = boto3.client('ec2', region_name=os.environ['EC2_REGION'])
     
     instance_id = os.environ['INSTANCE_ID']
     

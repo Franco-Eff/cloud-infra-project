@@ -112,7 +112,7 @@ resource "aws_lambda_function" "start_ec2" {
   environment {
     variables = {
       INSTANCE_ID = aws_instance.main.id
-      AWS_REGION  = var.aws_region
+      EC2_REGION  = var.aws_region
     }
   }
 
@@ -180,5 +180,4 @@ resource "aws_lambda_permission" "allow_eventbridge_start" {
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.start_ec2_schedule.arn
 }
- 
  
