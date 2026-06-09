@@ -3,7 +3,7 @@ import os
 import logging
 
 # Set up logging so we can see output in AWS CloudWatch
-logger = logging.getlogger()
+logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 def handler(event, context):
