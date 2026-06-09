@@ -12,7 +12,7 @@ def handler(event, context):
     Triggered automatically by EventBridge on a schedule.
     """
     # boto is AWS's Python SDK - it lets us talk to AWS
-    ec2 = boto3.client('ec2', region_name=os.enviorn["EC2_REGION"])
+    ec2 = boto3.client('ec2', region_name=os.environ["EC2_REGION"])
 
     instance_id = os.enviorn['INSTANCE_ID']
 
