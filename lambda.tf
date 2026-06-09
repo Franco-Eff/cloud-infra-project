@@ -180,3 +180,5 @@ resource "aws_lambda_permission" "allow_eventbridge_start" {
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.start_ec2_schedule.arn
 }
+ 
+ 
