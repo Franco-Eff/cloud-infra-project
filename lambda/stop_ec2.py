@@ -24,6 +24,6 @@ def handler(event, context):
     logger.info(f"Instance {instance_id} is now: {current_state}")
 
     return {
-        'statusCode': 200,
-        'body': f'Instance {instance_id} is now {current_state}'
+    'statusCode': 200,
+    'body': f'Instance {instance_id} is now {current_state}'
     }
