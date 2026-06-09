@@ -88,7 +88,7 @@ resource "aws_lambda_function" "stop_ec2" {
   environment {
     variables = {
       INSTANCE_ID = aws_instance.main.id
-      AWS_REGION  = var.aws_region
+      EC2_REGION  = var.aws_region
     }
   }
 
@@ -129,7 +129,7 @@ resource "aws_lambda_function" "start_ec2" {
 resource "aws_cloudwatch_event_rule" "stop_ec2_schedule" {
   name                = "${var.project_name}-stop-ec2-schedule"
   description         = "Stops EC2 instance every day at 8PM UTC"
-  schedule_expression = "cron(0 20 * MON-FRI *)"
+  schedule_expression = "cron(0 20 * * ? *)"
 
   tags = {
     Name        = "${var.project_name}-stop-schedule"
@@ -158,7 +158,7 @@ resource "aws_lambda_permission" "allow_eventbridge_stop" {
 resource "aws_cloudwatch_event_rule" "start_ec2_schedule" {
   name                = "${var.project_name}-start-ec2-schedule"
   description         = "Starts EC2 instance every day at 8AM UTC"
-  schedule_expression = "cron(0 8 * MON-FRI *)"   #sets the schedule to be MON-FRI during business hours
+  schedule_expression = "cron(0 8 * * ? *)"   #sets the schedule to be MON-FRI during business hours
 
   tags = {
     Name        = "${var.project_name}-start-schedule"
