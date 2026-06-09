@@ -14,7 +14,7 @@ def handler(event, context):
     # boto is AWS's Python SDK - it lets us talk to AWS
     ec2 = boto3.client('ec2', region_name=os.environ["EC2_REGION"])
 
-    instance_id = os.enviorn['INSTANCE_ID']
+    instance_id = os.environ['INSTANCE_ID']
 
     logger.info(f"Stopping EC2 instance: {instance_id}")
 
