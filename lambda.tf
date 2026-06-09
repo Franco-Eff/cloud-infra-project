@@ -83,6 +83,7 @@ resource "aws_lambda_function" "stop_ec2" {
   handler          = "stop_ec2.handler"
   runtime          = "python3.12"
   source_code_hash = data.archive_file.stop_ec2.output_base64sha256
+  timeout          = 30
 
   # Pass the instance ID and region as environment variables
   environment {
@@ -108,6 +109,7 @@ resource "aws_lambda_function" "start_ec2" {
   handler          = "start_ec2.handler"
   runtime          = "python3.12"
   source_code_hash = data.archive_file.start_ec2.output_base64sha256
+  timeout          = 30
 
   environment {
     variables = {
