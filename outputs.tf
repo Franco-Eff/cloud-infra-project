@@ -33,3 +33,15 @@ output "ec2_instance_id" {
   description = "The ID of the EC2 instance"
   value       = aws_instance.main.id
 }
+
+# The name of the stop Lambda function
+output "stop_lambda_function_name" {
+  description = "The name of the EC2 stop Lambda function"
+  value       = aws_lambda_function.stop_ec2.function_name
+}
+
+# The name of the start Lambda function
+output "start_lambda_function_name" {
+  description = "The name of the EC2 start Lambda function"
+  value       = aws_lambda_function.start_ec2.function_name
+}
