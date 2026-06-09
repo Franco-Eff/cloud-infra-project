@@ -1,3 +1,6 @@
+# CI/CD pipeline that validates and plans Terraform on PRs,
+# and lets Terraform Cloud handle applies on merge to main
+
 name: Terraform CI/CD
 
 on:
@@ -74,7 +77,6 @@ jobs:
               repo: context.repo.repo,
               body: output
             })
-
   
 
         
